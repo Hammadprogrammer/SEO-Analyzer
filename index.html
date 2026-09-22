@@ -1,1 +1,1551 @@
 
+﻿﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analyzer | Professional Website Audits & Search Visibility Analysis</title>
+    <meta name="description" content="Professional SEO analysis, website audits, technical SEO, on-page optimization, keyword analysis, and search visibility reporting.">
+    <meta name="keywords" content="SEO Analyzer, SEO Audit, Technical SEO, On-Page SEO, Keyword Analysis, SEO Reporting, Search Visibility">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="SEO Analyzer | Professional Website Audits & Search Visibility Analysis">
+    <meta property="og:description" content="Advanced website audits, technical SEO analysis, and search visibility optimization tools.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN for high-end SaaS styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        seo: {
+                            dark: '#070b14',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            accent: '#3b82f6', /* High-tech blue */
+                            accentHover: '#2563eb',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            muted: '#64748b',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        ::selection {
+            background: #3b82f6;
+            color: #ffffff;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070b14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+        }
+
+        .glass-nav {
+            background: rgba(7, 11, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-seo-dark text-seo-light font-sans antialiased selection:bg-seo-accent selection:text-white overflow-x-hidden">
+
+    <!-- Sticky Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-seo-border transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="group flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-seo-accent/10 border border-seo-accent/30 flex items-center justify-center text-seo-accent group-hover:bg-seo-accent group-hover:text-white transition-all">
+                    <i data-lucide="gauge" class="w-5 h-5"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white font-mono">
+                    SEO<span class="text-seo-accent">Analyzer</span>
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-seo-accent transition-colors">Home</a>
+                <a href="#analyzer" class="hover:text-seo-accent transition-colors">Analyzer</a>
+                <a href="#services" class="hover:text-seo-accent transition-colors">Services</a>
+                <a href="#audit" class="hover:text-seo-accent transition-colors">Audit</a>
+                <a href="#dashboard" class="hover:text-seo-accent transition-colors">Dashboard</a>
+                <a href="#process" class="hover:text-seo-accent transition-colors">Process</a>
+                <a href="#faq" class="hover:text-seo-accent transition-colors">FAQ</a>
+                <a href="#contact" class="hover:text-seo-accent transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#analyzer" class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-seo-accent hover:bg-seo-accentHover transition-all duration-300 rounded-md shadow-lg shadow-seo-accent/20">
+                    <span>Run Analysis</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" aria-label="Toggle Menu" class="lg:hidden text-white focus:outline-none p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="fixed inset-x-0 top-20 bg-seo-dark border-b border-seo-border glass-nav transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 lg:hidden flex flex-col px-6 py-6 space-y-4">
+            <a href="#home" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">Home</a>
+            <a href="#analyzer" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">Analyzer</a>
+            <a href="#services" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">Services</a>
+            <a href="#audit" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">Audit Categories</a>
+            <a href="#dashboard" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">SEO Score Dashboard</a>
+            <a href="#process" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">Process</a>
+            <a href="#faq" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">FAQ</a>
+            <a href="#contact" class="mobile-link text-base font-medium text-gray-300 hover:text-seo-accent transition-colors">Contact</a>
+            <div class="pt-4 border-t border-seo-border flex flex-col space-y-3">
+                <a href="#analyzer" class="w-full text-center py-3 text-xs font-semibold uppercase tracking-widest text-white bg-seo-accent hover:bg-seo-accentHover transition-all duration-300 rounded-md">
+                    Run Analysis
+                </a>
+                <a href="https://wa.me/923433996735" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 text-xs font-semibold uppercase tracking-widest text-white border border-seo-border hover:border-seo-accent transition-all duration-300 flex items-center justify-center space-x-2 rounded-md">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-seo-emerald"></i>
+                    <span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 bg-grid-pattern overflow-hidden">
+        <!-- Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-seo-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-6 space-y-8 reveal">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-seo-border bg-seo-card text-seo-accent text-xs font-mono tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-seo-emerald animate-pulse"></span>
+                    <span>Advanced Website Auditing & SEO Intelligence</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+                    Understand Your Website. <br>
+                    <span class="text-seo-accent font-mono">Improve Your Search Visibility.</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-gray-400 font-light max-w-xl leading-relaxed">
+                    SEO Analyzer helps you thoroughly analyze websites, identify critical SEO opportunities, diagnose technical issues, and systematically organize your search optimization efforts.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
+                    <a href="#analyzer" class="inline-flex items-center justify-center px-7 py-4 text-xs font-semibold uppercase tracking-widest text-white bg-seo-accent hover:bg-seo-accentHover transition-all duration-300 rounded-md shadow-lg shadow-seo-accent/25 space-x-2">
+                        <span>Analyze Your Website</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#services" class="inline-flex items-center justify-center px-7 py-4 text-xs font-semibold uppercase tracking-widest text-white border border-seo-border hover:border-seo-accent bg-seo-card/50 transition-all duration-300 rounded-md">
+                        <span>Explore SEO Services</span>
+                    </a>
+                    <a href="https://wa.me/923433996735" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white border border-seo-border hover:border-seo-emerald bg-seo-card/50 transition-all duration-300 space-x-2 rounded-md">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges / Quick Feature List -->
+                <div class="pt-6 border-t border-seo-border grid grid-cols-3 gap-4 text-gray-400 text-xs font-mono">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>Technical Audits</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>On-Page Analysis</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>Keyword Intelligence</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Hero SEO Dashboard Visual -->
+            <div class="lg:col-span-6 reveal">
+                <div class="glass-card rounded-xl p-6 border border-seo-border shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-20 font-mono text-xs text-seo-accent">SYSTEM: ONLINE</div>
+                    
+                    <!-- Dashboard Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-seo-border mb-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-seo-emerald"></div>
+                            <span class="text-xs font-mono text-gray-400 ml-2">seo-analyzer-dashboard.audit</span>
+                        </div>
+                        <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-seo-emerald/10 text-seo-emerald border border-seo-emerald/20">Live Audit View</span>
+                    </div>
+
+                    <!-- Score Card Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-seo-dark p-4 rounded-lg border border-seo-border text-center">
+                            <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider block mb-1">SEO Score</span>
+                            <span class="text-2xl font-bold font-mono text-seo-emerald">88<span class="text-xs text-gray-500">/100</span></span>
+                        </div>
+                        <div class="bg-seo-dark p-4 rounded-lg border border-seo-border text-center">
+                            <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider block mb-1">Technical</span>
+                            <span class="text-2xl font-bold font-mono text-seo-accent">92%</span>
+                        </div>
+                        <div class="bg-seo-dark p-4 rounded-lg border border-seo-border text-center">
+                            <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider block mb-1">Performance</span>
+                            <span class="text-2xl font-bold font-mono text-seo-amber">84%</span>
+                        </div>
+                        <div class="bg-seo-dark p-4 rounded-lg border border-seo-border text-center">
+                            <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider block mb-1">Issues</span>
+                            <span class="text-2xl font-bold font-mono text-red-400">3</span>
+                        </div>
+                    </div>
+
+                    <!-- Simulated Audit Checklist Table -->
+                    <div class="space-y-3 font-mono text-xs">
+                        <div class="flex items-center justify-between p-3 bg-seo-dark rounded border border-seo-border">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-seo-emerald"></i>
+                                <span class="text-gray-300">HTTPS Secure Protocol</span>
+                            </div>
+                            <span class="text-seo-emerald bg-seo-emerald/10 px-2 py-0.5 rounded text-[10px]">Passed</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-seo-dark rounded border border-seo-border">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="file-code" class="w-4 h-4 text-seo-emerald"></i>
+                                <span class="text-gray-300">Meta Title & Description Tag</span>
+                            </div>
+                            <span class="text-seo-emerald bg-seo-emerald/10 px-2 py-0.5 rounded text-[10px]">Optimized</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-seo-dark rounded border border-seo-border">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="smartphone" class="w-4 h-4 text-seo-amber"></i>
+                                <span class="text-gray-300">Mobile Viewport & Touch Targets</span>
+                            </div>
+                            <span class="text-seo-amber bg-seo-amber/10 px-2 py-0.5 rounded text-[10px]">Warning</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-seo-dark rounded border border-seo-border">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="sitemap" class="w-4 h-4 text-seo-emerald"></i>
+                                <span class="text-gray-300">XML Sitemap & Robots.txt</span>
+                            </div>
+                            <span class="text-seo-emerald bg-seo-emerald/10 px-2 py-0.5 rounded text-[10px]">Indexed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Analyzer Tool Section -->
+    <section id="analyzer" class="py-24 bg-seo-card border-t border-seo-border relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center space-y-4 mb-16 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Interactive Assessment Tool</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">Website SEO Analyzer</h2>
+                <p class="text-gray-400 font-light max-w-2xl mx-auto">Enter your website URL below to run an interactive client-side SEO assessment and view an instant audit breakdown.</p>
+            </div>
+
+            <!-- Analyzer Input Box -->
+            <div class="glass-card p-6 sm:p-8 rounded-xl border border-seo-border shadow-2xl reveal mb-8">
+                <form id="url-analyzer-form" class="flex flex-col sm:flex-row gap-4">
+                    <div class="relative flex-1">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 font-mono text-sm">
+                            https://
+                        </div>
+                        <input type="text" id="target-url-input" required class="w-full bg-seo-dark border border-seo-border pl-20 pr-4 py-4 text-white text-sm font-mono focus:outline-none focus:border-seo-accent transition-colors rounded-lg" placeholder="example.com">
+                    </div>
+                    <button type="submit" id="analyze-btn" class="px-8 py-4 text-xs font-semibold uppercase tracking-widest text-white bg-seo-accent hover:bg-seo-accentHover transition-all duration-300 rounded-lg flex items-center justify-center space-x-2 shrink-0">
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                        <span>Analyze Website</span>
+                    </button>
+                </form>
+                <div id="url-error" class="text-red-400 text-xs font-mono mt-2 hidden">Please enter a valid domain or URL format (e.g. example.com).</div>
+            </div>
+
+            <!-- Loading State Spinner -->
+            <div id="analyzer-loading" class="hidden text-center py-16 space-y-4 glass-card rounded-xl border border-seo-border">
+                <div class="w-12 h-12 border-4 border-seo-accent border-t-transparent rounded-full animate-spin mx-auto"></div>
+                <p class="text-sm font-mono text-gray-300">Crawling structure, validating meta tags, and checking technical SEO indicators...</p>
+            </div>
+
+            <!-- Results Dashboard (Hidden Initially) -->
+            <div id="analyzer-results" class="hidden space-y-8 glass-card p-6 sm:p-8 rounded-xl border border-seo-border reveal">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-seo-border gap-4">
+                    <div>
+                        <span class="text-xs font-mono text-gray-400">Analysis target:</span>
+                        <h3 id="result-url-display" class="text-lg font-mono font-bold text-white">example.com</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="text-right">
+                            <span class="text-xs font-mono text-gray-400 block">Overall Score</span>
+                            <span id="result-score-val" class="text-2xl font-bold font-mono text-seo-emerald">85/100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-seo-dark p-4 rounded-lg border border-seo-border">
+                        <span class="text-xs font-mono text-gray-400 block mb-1">Technical SEO</span>
+                        <span class="text-xl font-bold font-mono text-seo-emerald">90%</span>
+                        <span class="text-[10px] text-gray-500 block mt-1">Crawlable & Secure</span>
+                    </div>
+                    <div class="bg-seo-dark p-4 rounded-lg border border-seo-border">
+                        <span class="text-xs font-mono text-gray-400 block mb-1">On-Page SEO</span>
+                        <span class="text-xl font-bold font-mono text-seo-accent">82%</span>
+                        <span class="text-[10px] text-gray-500 block mt-1">Good Title & Headings</span>
+                    </div>
+                    <div class="bg-seo-dark p-4 rounded-lg border border-seo-border">
+                        <span class="text-xs font-mono text-gray-400 block mb-1">Performance</span>
+                        <span class="text-xl font-bold font-mono text-seo-amber">78%</span>
+                        <span class="text-[10px] text-gray-500 block mt-1">Speed Optimization</span>
+                    </div>
+                    <div class="bg-seo-dark p-4 rounded-lg border border-seo-border">
+                        <span class="text-xs font-mono text-gray-400 block mb-1">Mobile Viewport</span>
+                        <span class="text-xl font-bold font-mono text-seo-emerald">95%</span>
+                        <span class="text-[10px] text-gray-500 block mt-1">Fully Responsive</span>
+                    </div>
+                </div>
+
+                <!-- Detailed Checklist Findings -->
+                <div class="space-y-3 font-mono text-xs">
+                    <h4 class="text-white font-sans font-semibold text-sm mb-2">Audit Breakdown & Recommendations</h4>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">HTTPS Protocol Enabled</span>
+                        </div>
+                        <span class="text-seo-emerald">Passed</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Single H1 Heading Detected</span>
+                        </div>
+                        <span class="text-seo-emerald">Passed</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="alert-triangle" class="w-4 h-4 text-seo-amber"></i>
+                            <span class="text-gray-300">Meta Description Length Optimization</span>
+                        </div>
+                        <span class="text-seo-amber">Warning</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">XML Sitemap Accessibility</span>
+                        </div>
+                        <span class="text-seo-emerald">Found</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-between border-t border-seo-border gap-4">
+                    <p class="text-xs text-gray-400">Need a comprehensive manual SEO audit and tailored strategy report?</p>
+                    <a href="#contact" class="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-seo-accent hover:bg-seo-accentHover transition-colors rounded-md">
+                        Request Full Expert Audit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-seo-dark border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-4 mb-20 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Comprehensive Offerings</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">Professional SEO Services</h2>
+                <p class="text-gray-400 font-light">Targeted analysis and optimization services designed to elevate your search visibility and technical health.</p>
+            </div>
+
+            <!-- 12 Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="search-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">1. SEO Website Audit</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Complete top-to-bottom website evaluation covering technical bottlenecks, structure, and visibility barriers.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">2. Technical SEO Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Deep inspection of crawlability, indexability, robots.txt, canonicalization, and site architecture.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="file-code-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">3. On-Page SEO Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Evaluating heading hierarchies, internal linking structure, image alt tags, and keyword placement.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="key" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">4. Keyword Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Conceptual mapping of search intent, term relevance, and strategic optimization targets.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="tag" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">5. Meta Tag Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Auditing title tags and meta descriptions for optimal length, character count, and click-through appeal.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="file-text" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">6. Content SEO Review</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Assessing content depth, topical authority, search intent alignment, and readability.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="git-branch" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">7. Website Structure Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Reviewing site hierarchy, URL pathways, and internal linking depth for maximum crawl efficiency.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">8. Mobile SEO Review</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Ensuring flawless mobile responsiveness, touch targets, and viewport compatibility.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">9. Performance & Core Web Vitals</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Analyzing loading speeds, resource optimization, and Core Web Vitals metrics.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">10. SEO Reporting</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Structuring comprehensive, actionable SEO reports highlighting critical issues and priorities.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">11. Competitor SEO Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Conceptual benchmarking against industry peers to identify structural and optimization gaps.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-seo-dark border border-seo-border rounded-lg flex items-center justify-center text-seo-accent mb-6 group-hover:border-seo-accent transition-colors">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">12. Search Visibility Analysis</h3>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">Evaluating presence across search engine result features, indexes, and organic footprint.</p>
+                    </div>
+                    <div class="pt-4 border-t border-seo-border flex items-center justify-between">
+                        <span class="text-xs font-mono text-seo-accent">Analysis Service</span>
+                        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white hover:text-seo-accent transition-colors flex items-center space-x-1">
+                            <span>Learn More</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Audit Categories (Interactive Tabs) -->
+    <section id="audit" class="py-24 bg-seo-card border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-4 mb-16 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Audit Architecture</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">SEO Audit Categories</h2>
+                <p class="text-gray-400 font-light">Explore how a professional SEO audit is organized across critical optimization vectors.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+                <button class="audit-tab px-6 py-3 text-xs font-mono uppercase tracking-wider rounded-lg border border-seo-border bg-seo-accent text-white transition-all" data-target="tech">Technical SEO</button>
+                <button class="audit-tab px-6 py-3 text-xs font-mono uppercase tracking-wider rounded-lg border border-seo-border bg-seo-dark text-gray-400 hover:text-white transition-all" data-target="onpage">On-Page SEO</button>
+                <button class="audit-tab px-6 py-3 text-xs font-mono uppercase tracking-wider rounded-lg border border-seo-border bg-seo-dark text-gray-400 hover:text-white transition-all" data-target="performance">Performance</button>
+                <button class="audit-tab px-6 py-3 text-xs font-mono uppercase tracking-wider rounded-lg border border-seo-border bg-seo-dark text-gray-400 hover:text-white transition-all" data-target="content">Content</button>
+            </div>
+
+            <!-- Tab Content Panels -->
+            <div class="max-w-4xl mx-auto glass-card p-8 sm:p-10 rounded-xl border border-seo-border reveal">
+                <!-- Panel 1: Technical -->
+                <div id="panel-tech" class="audit-panel space-y-6">
+                    <div class="flex items-center space-x-3 pb-4 border-b border-seo-border">
+                        <i data-lucide="cpu" class="w-6 h-6 text-seo-accent"></i>
+                        <h3 class="text-xl font-bold text-white">Technical SEO Architecture</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light leading-relaxed">
+                        Technical SEO ensures search engines can crawl, parse, and index your website without encountering roadblocks.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Crawlability & Spider Accessibility</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Indexability & Noindex Directives</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">HTTPS SSL Security Implementation</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">XML Sitemap & Robots.txt Config</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">URL Structure & Canonical Tags</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: On-Page -->
+                <div id="panel-onpage" class="audit-panel space-y-6 hidden">
+                    <div class="flex items-center space-x-3 pb-4 border-b border-seo-border">
+                        <i data-lucide="file-code-2" class="w-6 h-6 text-seo-accent"></i>
+                        <h3 class="text-xl font-bold text-white">On-Page SEO Optimization</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light leading-relaxed">
+                        On-Page SEO involves optimizing individual webpage elements to rank higher and earn more relevant search traffic.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Title Tags & Meta Descriptions</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Heading Hierarchy (H1, H2, H3)</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Internal Linking Architecture</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Image Alt Text & Asset Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Performance -->
+                <div id="panel-performance" class="audit-panel space-y-6 hidden">
+                    <div class="flex items-center space-x-3 pb-4 border-b border-seo-border">
+                        <i data-lucide="activity" class="w-6 h-6 text-seo-accent"></i>
+                        <h3 class="text-xl font-bold text-white">Performance & Core Web Vitals</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light leading-relaxed">
+                        Page speed and user experience metrics are vital ranking factors that influence user retention and search performance.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Page Speed & Asset Minification</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Core Web Vitals (LCP, FID, CLS)</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Mobile Usability & Responsiveness</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Resource Caching & CDN Setup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Content -->
+                <div id="panel-content" class="audit-panel space-y-6 hidden">
+                    <div class="flex items-center space-x-3 pb-4 border-b border-seo-border">
+                        <i data-lucide="file-text" class="w-6 h-6 text-seo-accent"></i>
+                        <h3 class="text-xl font-bold text-white">Content Structure & Relevance</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light leading-relaxed">
+                        High-quality, relevant content structured around search intent establishes topical authority and user engagement.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Search Intent Alignment</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Topical Coverage & Depth</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Keyword Relevance & Placement</span>
+                        </div>
+                        <div class="p-4 bg-seo-dark rounded border border-seo-border flex items-center space-x-3">
+                            <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                            <span class="text-gray-300">Readability & Formatting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Score Dashboard Section -->
+    <section id="dashboard" class="py-24 bg-seo-dark border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-4 mb-16 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Metric Visualization</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">SEO Score Dashboard Example</h2>
+                <p class="text-gray-400 font-light">Preview our professional SEO scoring breakdown interface used in client audit reports.</p>
+            </div>
+
+            <!-- Dashboard Display Card -->
+            <div class="glass-card p-8 sm:p-12 rounded-xl border border-seo-border reveal space-y-8">
+                <div class="flex flex-col md:flex-row items-center justify-between pb-8 border-b border-seo-border gap-6">
+                    <div>
+                        <span class="text-xs font-mono text-seo-accent uppercase">Sample Audit Report UI</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">Website Health Scorecard</h3>
+                        <p class="text-xs text-gray-400 font-mono mt-1">Target: sample-domain-analysis.com</p>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="text-center px-6 py-4 bg-seo-dark rounded-lg border border-seo-border">
+                            <span class="text-xs font-mono text-gray-400 block">Overall Rating</span>
+                            <span class="text-3xl font-bold font-mono text-seo-emerald">87<span class="text-sm text-gray-500">/100</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-mono">
+                            <span class="text-gray-300">Technical SEO Health</span>
+                            <span class="text-seo-accent">92%</span>
+                        </div>
+                        <div class="w-full h-3 bg-seo-dark rounded-full overflow-hidden border border-seo-border">
+                            <div class="h-full bg-seo-accent rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-mono">
+                            <span class="text-gray-300">On-Page Optimization</span>
+                            <span class="text-seo-emerald">88%</span>
+                        </div>
+                        <div class="w-full h-3 bg-seo-dark rounded-full overflow-hidden border border-seo-border">
+                            <div class="h-full bg-seo-emerald rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-mono">
+                            <span class="text-gray-300">Performance & Speed</span>
+                            <span class="text-seo-amber">81%</span>
+                        </div>
+                        <div class="w-full h-3 bg-seo-dark rounded-full overflow-hidden border border-seo-border">
+                            <div class="h-full bg-seo-amber rounded-full" style="width: 81%"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-mono">
+                            <span class="text-gray-300">Content Quality & Structure</span>
+                            <span class="text-seo-accent">86%</span>
+                        </div>
+                        <div class="w-full h-3 bg-seo-dark rounded-full overflow-hidden border border-seo-border">
+                            <div class="h-full bg-seo-accent rounded-full" style="width: 86%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keyword Analysis Section -->
+    <section class="py-24 bg-seo-card border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-4 mb-16 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Search Intent Intelligence</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">Keyword Analysis Preview</h2>
+                <p class="text-gray-400 font-light">Sample conceptual keyword mapping table demonstrating keyword relevance and search intent classification.</p>
+            </div>
+
+            <!-- Table Container -->
+            <div class="glass-card rounded-xl border border-seo-border overflow-hidden reveal">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left font-mono text-xs">
+                        <thead class="bg-seo-dark text-gray-400 uppercase tracking-wider border-b border-seo-border">
+                            <tr>
+                                <th class="p-4">Keyword Concept</th>
+                                <th class="p-4">Search Intent</th>
+                                <th class="p-4">Competition</th>
+                                <th class="p-4">Relevance</th>
+                                <th class="p-4">Optimization Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-seo-border text-gray-300">
+                            <tr class="hover:bg-seo-dark/50 transition-colors">
+                                <td class="p-4 font-bold text-white">technical seo audit</td>
+                                <td class="p-4 text-seo-accent">Informational / Commercial</td>
+                                <td class="p-4 text-seo-amber">Medium</td>
+                                <td class="p-4 text-seo-emerald">High</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-seo-emerald/10 text-seo-emerald rounded text-[10px]">Optimized</span></td>
+                            </tr>
+                            <tr class="hover:bg-seo-dark/50 transition-colors">
+                                <td class="p-4 font-bold text-white">website speed optimization</td>
+                                <td class="p-4 text-seo-accent">Transactional</td>
+                                <td class="p-4 text-seo-amber">Medium</td>
+                                <td class="p-4 text-seo-emerald">High</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-seo-accent/10 text-seo-accent rounded text-[10px]">In Review</span></td>
+                            </tr>
+                            <tr class="hover:bg-seo-dark/50 transition-colors">
+                                <td class="p-4 font-bold text-white">on page seo checklist</td>
+                                <td class="p-4 text-seo-accent">Informational</td>
+                                <td class="p-4 text-seo-emerald">Low</td>
+                                <td class="p-4 text-seo-emerald">High</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-seo-emerald/10 text-seo-emerald rounded text-[10px]">Optimized</span></td>
+                            </tr>
+                            <tr class="hover:bg-seo-dark/50 transition-colors">
+                                <td class="p-4 font-bold text-white">search visibility report</td>
+                                <td class="p-4 text-seo-accent">Commercial</td>
+                                <td class="p-4 text-seo-amber">Medium</td>
+                                <td class="p-4 text-seo-emerald">High</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-seo-amber/10 text-seo-amber rounded text-[10px]">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Reporting & Competitor Comparison Section -->
+    <section class="py-24 bg-seo-dark border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- SEO Report Preview -->
+            <div class="glass-card p-8 rounded-xl border border-seo-border space-y-6 reveal">
+                <div class="flex items-center space-x-3 pb-4 border-b border-seo-border">
+                    <i data-lucide="file-text" class="w-6 h-6 text-seo-accent"></i>
+                    <div>
+                        <span class="text-[10px] font-mono text-seo-accent uppercase">Professional Output</span>
+                        <h3 class="text-lg font-bold text-white">SEO Report Interface Preview</h3>
+                    </div>
+                </div>
+                <div class="space-y-3 font-mono text-xs">
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Audit Summary & Health Index</span>
+                        <span class="text-seo-emerald">Complete</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Critical Issues & Warnings</span>
+                        <span class="text-seo-amber">3 Identified</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Technical & On-Page Findings</span>
+                        <span class="text-seo-accent">Detailed</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Actionable Recommendations</span>
+                        <span class="text-seo-emerald">Prioritized</span>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 font-light">Our reports provide clear, prioritized step-by-step guidance to resolve website vulnerabilities.</p>
+            </div>
+
+            <!-- Competitor Analysis Comparison UI -->
+            <div class="glass-card p-8 rounded-xl border border-seo-border space-y-6 reveal">
+                <div class="flex items-center space-x-3 pb-4 border-b border-seo-border">
+                    <i data-lucide="users" class="w-6 h-6 text-seo-accent"></i>
+                    <div>
+                        <span class="text-[10px] font-mono text-seo-accent uppercase">Benchmarking</span>
+                        <h3 class="text-lg font-bold text-white">Conceptual Competitor Comparison</h3>
+                    </div>
+                </div>
+                <div class="space-y-3 font-mono text-xs">
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Technical Structure</span>
+                        <span class="text-seo-emerald">Optimized vs Peer Avg</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Content Depth & Authority</span>
+                        <span class="text-seo-accent">Benchmarked</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Mobile Optimization</span>
+                        <span class="text-seo-emerald">Advanced</span>
+                    </div>
+                    <div class="p-3 bg-seo-dark rounded border border-seo-border flex justify-between items-center">
+                        <span class="text-gray-300">Search Visibility Footprint</span>
+                        <span class="text-seo-amber">Sample Analysis</span>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 font-light">Understand where your website stands relative to industry benchmarks with sample comparative intelligence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-seo-card border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-4 mb-20 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Workflow</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">Our SEO Analysis Process</h2>
+                <p class="text-gray-400 font-light">A structured, methodological approach to website auditing and search visibility optimization.</p>
+            </div>
+
+            <!-- Process Timeline Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <div class="glass-card p-6 rounded-xl border border-seo-border relative">
+                    <span class="text-xs font-mono text-seo-accent block mb-3">01 / INPUT</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Website URL</h3>
+                    <p class="text-xs text-gray-400 font-light">Submit your domain or project requirements for initial evaluation.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-seo-border relative">
+                    <span class="text-xs font-mono text-seo-accent block mb-3">02 / CRAWL</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Initial Analysis</h3>
+                    <p class="text-xs text-gray-400 font-light">Evaluating accessibility, meta tags, headers, and protocol security.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-seo-border relative">
+                    <span class="text-xs font-mono text-seo-accent block mb-3">03 / AUDIT</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Comprehensive Audit</h3>
+                    <p class="text-xs text-gray-400 font-light">Deep inspection of technical, on-page, and performance metrics.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-seo-border relative">
+                    <span class="text-xs font-mono text-seo-accent block mb-3">04 / REPORT</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Actionable Report</h3>
+                    <p class="text-xs text-gray-400 font-light">Delivering structured recommendations and optimization priorities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why SEO Analysis Matters -->
+    <section class="py-24 bg-seo-dark border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Value Proposition</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">Why SEO Analysis Matters</h2>
+                <p class="text-gray-300 font-light leading-relaxed">
+                    Without structured analysis, website optimization efforts are based on guesswork. Regular auditing ensures technical issues are caught early, site architecture remains robust, and search readiness is continuously maintained.
+                </p>
+                <div class="space-y-3 font-mono text-xs">
+                    <div class="flex items-center space-x-3 text-gray-300">
+                        <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>Find technical issues before they impact visibility</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-gray-300">
+                        <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>Improve website structure and crawlability</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-gray-300">
+                        <i data-lucide="check" class="w-4 h-4 text-seo-emerald"></i>
+                        <span>Make decisions using structured analytical data</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Checklist Interactive Box -->
+            <div class="glass-card p-8 rounded-xl border border-seo-border space-y-4 reveal">
+                <div class="flex items-center justify-between pb-4 border-b border-seo-border">
+                    <span class="text-xs font-mono text-seo-accent uppercase">Interactive Checklist</span>
+                    <span id="checklist-counter" class="text-xs font-mono text-gray-400">0 / 6 Completed</span>
+                </div>
+                <div class="space-y-3 font-mono text-xs" id="interactive-checklist">
+                    <label class="flex items-center space-x-3 p-3 bg-seo-dark rounded border border-seo-border cursor-pointer hover:border-seo-accent transition-colors">
+                        <input type="checkbox" class="checklist-item accent-seo-accent w-4 h-4">
+                        <span class="text-gray-300">HTTPS Protocol Enabled</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-seo-dark rounded border border-seo-border cursor-pointer hover:border-seo-accent transition-colors">
+                        <input type="checkbox" class="checklist-item accent-seo-accent w-4 h-4">
+                        <span class="text-gray-300">Optimized Page Title & Description</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-seo-dark rounded border border-seo-border cursor-pointer hover:border-seo-accent transition-colors">
+                        <input type="checkbox" class="checklist-item accent-seo-accent w-4 h-4">
+                        <span class="text-gray-300">Single H1 Heading Present</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-seo-dark rounded border border-seo-border cursor-pointer hover:border-seo-accent transition-colors">
+                        <input type="checkbox" class="checklist-item accent-seo-accent w-4 h-4">
+                        <span class="text-gray-300">Mobile Responsive Viewport</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-seo-dark rounded border border-seo-border cursor-pointer hover:border-seo-accent transition-colors">
+                        <input type="checkbox" class="checklist-item accent-seo-accent w-4 h-4">
+                        <span class="text-gray-300">XML Sitemap Configured</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-seo-dark rounded border border-seo-border cursor-pointer hover:border-seo-accent transition-colors">
+                        <input type="checkbox" class="checklist-item accent-seo-accent w-4 h-4">
+                        <span class="text-gray-300">Robots.txt Accessible</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-seo-card border-t border-seo-border relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center space-y-4 mb-16 reveal">
+                <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Common Questions</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">Frequently Asked Questions</h2>
+                <p class="text-gray-400 font-light">Everything you need to know about our SEO analysis and website audit services.</p>
+            </div>
+
+            <div class="space-y-4 reveal" id="faq-container">
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>What is an SEO website audit?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        An SEO website audit is a comprehensive evaluation of your website's technical health, on-page optimization, content structure, and search visibility to identify roadblocks and opportunities for improvement.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>What does technical SEO analysis include?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        Technical SEO analysis includes checking crawlability, indexability, HTTPS protocols, XML sitemaps, robots.txt configuration, site architecture, and canonical implementation.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>Can you analyze an existing website?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        Yes, we specialize in analyzing existing websites of all sizes to uncover hidden technical bottlenecks and search visibility opportunities.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>What is on-page SEO?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        On-page SEO refers to optimizing individual web pages, including title tags, meta descriptions, headings, internal links, and content quality, to rank higher in search engine results.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>Why are keywords important?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        Keywords help align your website content with the exact search intent and terms your target audience uses when looking for your services online.
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>What is a technical SEO issue?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        A technical SEO issue is any barrier that prevents search engine crawlers from efficiently accessing, parsing, or indexing your website pages.
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>Do you guarantee Google rankings?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        No. Search engine algorithms depend on numerous dynamic factors, and no professional SEO agency can guarantee specific rankings. We focus on rigorous technical optimization and search visibility analysis.
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="glass-card rounded-xl border border-seo-border overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+                        <span>How can I request an SEO analysis?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-seo-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-300 font-light leading-relaxed">
+                        You can request an SEO analysis by filling out our project inquiry form or contacting our team directly via phone, email, or WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section — ABSOLUTELY ZERO IMAGES -->
+    <section id="contact" class="py-24 bg-seo-dark border-t border-seo-border relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <!-- Contact Info -->
+            <div class="lg:col-span-5 space-y-8 reveal">
+                <div>
+                    <span class="text-xs uppercase font-mono tracking-widest text-seo-accent">Get in Touch</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight mt-2">Request Your SEO Analysis</h2>
+                    <p class="text-gray-400 font-light mt-4">
+                        Connect with our SEO analysis experts directly or submit your project details using the inquiry form.
+                    </p>
+                </div>
+
+                <div class="space-y-6 pt-4 border-t border-seo-border font-mono text-xs">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-seo-card border border-seo-border rounded-lg flex items-center justify-center text-seo-accent shrink-0">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block mb-1">Phone</span>
+                            <a href="tel:+923433996735" class="text-white hover:text-seo-accent transition-colors text-sm font-bold">03433996735</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-seo-card border border-seo-border rounded-lg flex items-center justify-center text-seo-emerald shrink-0">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block mb-1">WhatsApp</span>
+                            <a href="https://wa.me/923433996735" target="_blank" rel="noopener noreferrer" class="text-white hover:text-seo-accent transition-colors text-sm font-bold">+92 343 3996735</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-seo-card border border-seo-border rounded-lg flex items-center justify-center text-seo-accent shrink-0">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block mb-1">Email</span>
+                            <a href="mailto:info.seoanalyzer@gmail.com" class="text-white hover:text-seo-accent transition-colors text-sm font-bold">info.seoanalyzer@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-7 reveal">
+                <div class="glass-card p-8 md:p-10 rounded-xl border border-seo-border relative">
+                    <form id="contact-form" class="space-y-6" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required class="w-full bg-seo-dark border border-seo-border px-4 py-3 text-white text-sm focus:outline-none focus:border-seo-accent transition-colors rounded-lg font-mono" placeholder="John Doe">
+                                <span class="error-msg text-red-400 text-xs font-mono mt-1 hidden">Please enter your full name.</span>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-seo-dark border border-seo-border px-4 py-3 text-white text-sm focus:outline-none focus:border-seo-accent transition-colors rounded-lg font-mono" placeholder="name@domain.com">
+                                <span class="error-msg text-red-400 text-xs font-mono mt-1 hidden">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full bg-seo-dark border border-seo-border px-4 py-3 text-white text-sm focus:outline-none focus:border-seo-accent transition-colors rounded-lg font-mono" placeholder="03433996735">
+                                <span class="error-msg text-red-400 text-xs font-mono mt-1 hidden">Please enter your phone number.</span>
+                            </div>
+                            <div>
+                                <label for="websiteUrl" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Website URL *</label>
+                                <input type="text" id="websiteUrl" name="websiteUrl" required class="w-full bg-seo-dark border border-seo-border px-4 py-3 text-white text-sm focus:outline-none focus:border-seo-accent transition-colors rounded-lg font-mono" placeholder="example.com">
+                                <span class="error-msg text-red-400 text-xs font-mono mt-1 hidden">Please enter your website URL.</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="seoService" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">SEO Service Needed *</label>
+                            <select id="seoService" name="seoService" required class="w-full bg-seo-dark border border-seo-border px-4 py-3 text-white text-sm focus:outline-none focus:border-seo-accent transition-colors rounded-lg font-mono">
+                                <option value="" disabled selected>Select SEO Service</option>
+                                <option value="SEO Website Audit">SEO Website Audit</option>
+                                <option value="Technical SEO Analysis">Technical SEO Analysis</option>
+                                <option value="On-Page SEO Analysis">On-Page SEO Analysis</option>
+                                <option value="Keyword Analysis">Keyword Analysis</option>
+                                <option value="SEO Reporting">SEO Reporting</option>
+                                <option value="Other SEO Services">Other SEO Services</option>
+                            </select>
+                            <span class="error-msg text-red-400 text-xs font-mono mt-1 hidden">Please select an SEO service.</span>
+                        </div>
+
+                        <div>
+                            <label for="projectDetails" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Project Details *</label>
+                            <textarea id="projectDetails" name="projectDetails" rows="4" required class="w-full bg-seo-dark border border-seo-border px-4 py-3 text-white text-sm focus:outline-none focus:border-seo-accent transition-colors rounded-lg font-mono resize-none" placeholder="Describe your website goals and SEO requirements..."></textarea>
+                            <span class="error-msg text-red-400 text-xs font-mono mt-1 hidden">Please provide project details.</span>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 text-xs font-semibold uppercase tracking-widest text-white bg-seo-accent hover:bg-seo-accentHover transition-all duration-300 rounded-lg flex items-center justify-center space-x-2">
+                            <span>Submit SEO Inquiry</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success State (Hidden by default) -->
+                    <div id="contact-success" class="hidden text-center py-12 space-y-6">
+                        <div class="w-16 h-16 bg-seo-emerald/10 border border-seo-emerald text-seo-emerald mx-auto rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Inquiry Received Successfully</h3>
+                        <p class="text-gray-300 text-sm max-w-md mx-auto font-light">
+                            Thank you for reaching out to SEO Analyzer. Our team will review your website audit request and contact you promptly.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                            <a href="https://wa.me/923433996735" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3 text-xs font-semibold uppercase tracking-widest text-white bg-seo-emerald hover:bg-emerald-600 transition-all duration-300 inline-flex items-center justify-center space-x-2 rounded-lg">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Continue on WhatsApp</span>
+                            </a>
+                            <a href="mailto:info.seoanalyzer@gmail.com" class="w-full sm:w-auto px-6 py-3 text-xs font-semibold uppercase tracking-widest text-white border border-seo-border hover:border-seo-accent transition-all duration-300 inline-flex items-center justify-center space-x-2 rounded-lg">
+                                <i data-lucide="mail" class="w-4 h-4 text-seo-accent"></i>
+                                <span>Send Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-seo-card border-t border-seo-border py-16 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+            <!-- Brand Column -->
+            <div class="lg:col-span-2 space-y-4">
+                <a href="#home" class="text-lg font-bold text-white font-mono tracking-tight flex items-center space-x-2">
+                    <span class="text-seo-accent">SEO</span><span>Analyzer</span>
+                </a>
+                <p class="text-gray-400 text-xs font-light leading-relaxed max-w-sm">
+                    Professional SEO analysis, website auditing, technical SEO, and search visibility optimization platform.
+                </p>
+                <div class="pt-2 space-y-1 text-xs font-mono">
+                    <p><span class="text-seo-muted">Phone:</span> <a href="tel:+923433996735" class="text-white hover:text-seo-accent">03433996735</a></p>
+                    <p><span class="text-seo-muted">WhatsApp:</span> <a href="https://wa.me/923433996735" target="_blank" rel="noopener noreferrer" class="text-white hover:text-seo-accent">+92 343 3996735</a></p>
+                    <p><span class="text-seo-muted">Email:</span> <a href="mailto:info.seoanalyzer@gmail.com" class="text-white hover:text-seo-accent">info.seoanalyzer@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase font-mono tracking-widest text-white font-semibold">Quick Links</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#home" class="hover:text-seo-accent transition-colors">Home</a></li>
+                    <li><a href="#analyzer" class="hover:text-seo-accent transition-colors">SEO Analyzer</a></li>
+                    <li><a href="#services" class="hover:text-seo-accent transition-colors">Services</a></li>
+                    <li><a href="#audit" class="hover:text-seo-accent transition-colors">Audit</a></li>
+                    <li><a href="#dashboard" class="hover:text-seo-accent transition-colors">Dashboard</a></li>
+                    <li><a href="#faq" class="hover:text-seo-accent transition-colors">FAQ</a></li>
+                    <li><a href="#contact" class="hover:text-seo-accent transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- SEO Services -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase font-mono tracking-widest text-white font-semibold">SEO Services</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#services" class="hover:text-seo-accent transition-colors">SEO Audit</a></li>
+                    <li><a href="#services" class="hover:text-seo-accent transition-colors">Technical SEO</a></li>
+                    <li><a href="#services" class="hover:text-seo-accent transition-colors">On-Page SEO</a></li>
+                    <li><a href="#services" class="hover:text-seo-accent transition-colors">Keyword Analysis</a></li>
+                    <li><a href="#services" class="hover:text-seo-accent transition-colors">SEO Reporting</a></li>
+                </ul>
+            </div>
+
+            <!-- CTA / Contact -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase font-mono tracking-widest text-white font-semibold">Action</h4>
+                <p class="text-xs text-gray-400 font-light">Run an instant assessment or connect with our team today.</p>
+                <a href="#analyzer" class="inline-block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-seo-accent hover:bg-seo-accentHover transition-colors rounded-md text-center w-full">
+                    Analyze Your Website
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-seo-border flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-gray-500">
+            <p id="copyright-text"></p>
+            <p class="mt-4 sm:mt-0">Professional Website Auditing & Search Visibility Intelligence</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-10 h-10 bg-seo-card border border-seo-border text-seo-accent rounded-lg flex items-center justify-center opacity-0 pointer-events-none hover:border-seo-accent transition-all duration-300 shadow-xl">
+        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+    </button>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dynamic Copyright Year
+        document.getElementById('copyright-text').textContent = `© ${new Date().getFullYear()} SEO Analyzer. All Rights Reserved.`;
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            } else {
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Scroll Reveal Animation (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Interactive Analyzer Form Simulation
+        const analyzerForm = document.getElementById('url-analyzer-form');
+        const targetUrlInput = document.getElementById('target-url-input');
+        const urlError = document.getElementById('url-error');
+        const analyzerLoading = document.getElementById('analyzer-loading');
+        const analyzerResults = document.getElementById('analyzer-results');
+        const resultUrlDisplay = document.getElementById('result-url-display');
+
+        analyzerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const val = targetUrlInput.value.trim();
+            if (val.length < 3) {
+                urlError.classList.remove('hidden');
+                return;
+            }
+            urlError.classList.add('hidden');
+            analyzerResults.classList.add('hidden');
+            analyzerLoading.classList.remove('hidden');
+
+            setTimeout(() => {
+                analyzerLoading.classList.add('hidden');
+                resultUrlDisplay.textContent = val.replace(/^https?:\/\//, '');
+                analyzerResults.classList.remove('hidden');
+                analyzerResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 1500);
+        });
+
+        // Audit Categories Tabs
+        const auditTabs = document.querySelectorAll('.audit-tab');
+        const auditPanels = document.querySelectorAll('.audit-panel');
+
+        auditTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-target');
+                auditTabs.forEach(t => {
+                    t.classList.remove('bg-seo-accent', 'text-white');
+                    t.classList.add('bg-seo-dark', 'text-gray-400');
+                });
+                tab.classList.remove('bg-seo-dark', 'text-gray-400');
+                tab.classList.add('bg-seo-accent', 'text-white');
+
+                auditPanels.forEach(panel => {
+                    panel.classList.add('hidden');
+                });
+                document.getElementById(`panel-${target}`).classList.remove('hidden');
+            });
+        });
+
+        // Interactive Checklist Counter
+        const checkboxes = document.querySelectorAll('.checklist-item');
+        const checklistCounter = document.getElementById('checklist-counter');
+
+        function updateChecklistCount() {
+            const checkedCount = document.querySelectorAll('.checklist-item:checked').length;
+            checklistCounter.textContent = `${checkedCount} / 6 Completed`;
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateChecklistCount);
+        });
+
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('lucide, svg');
+                
+                // Toggle current
+                content.classList.toggle('hidden');
+                if(icon) {
+                    icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Contact Form Validation & Submission
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccess = document.getElementById('contact-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            const fields = [
+                { id: 'fullName', validate: val => val.trim().length > 0 },
+                { id: 'email', validate: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) },
+                { id: 'phone', validate: val => val.trim().length >= 6 },
+                { id: 'websiteUrl', validate: val => val.trim().length > 2 },
+                { id: 'seoService', validate: val => val !== '' },
+                { id: 'projectDetails', validate: val => val.trim().length > 5 }
+            ];
+
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const errorSpan = input.nextElementSibling;
+                if (!field.validate(input.value)) {
+                    input.classList.add('border-red-400');
+                    if (errorSpan && errorSpan.classList.contains('error-msg')) {
+                        errorSpan.classList.remove('hidden');
+                    }
+                    isValid = false;
+                } else {
+                    input.classList.remove('border-red-400');
+                    if (errorSpan && errorSpan.classList.contains('error-msg')) {
+                        errorSpan.classList.add('hidden');
+                    }
+                }
+            });
+
+            if (isValid) {
+                contactForm.classList.add('hidden');
+                contactSuccess.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
